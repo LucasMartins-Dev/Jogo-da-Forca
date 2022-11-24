@@ -5,15 +5,15 @@ import Jogo from './jogo.js';
 import Chute from './chute.js';
 import palavras from "../palavras.js";
 
-export default function Appp(){
+export default function Appp(props){
   let arrpalavra;
-  const[escolherpalavra,setescolherpalavra] = React.useState('')
+  const[escolherpalavra,setescolherpalavra] = React.useState(<div onClick = {Iniciarjogo} className="button"> Escolher Palavra</div>)
     const[palavrajogo,setpalavrajogo] = React.useState('')
+    const[palavraoculta,setpalavraoculta]=React.useState([])
     function Iniciarjogo(){
       const palavraescolhida = Math.floor(Math.random()*palavras.length);
       setpalavrajogo (palavras[palavraescolhida])
       setescolherpalavra(<div className="button gray"> Escolher Palavra</div>)
-      
       Habilitarletra()
     
   }
@@ -27,8 +27,10 @@ export default function Appp(){
   
     const[letra,setletra]=React.useState('letra lgray')
     const[tentar,settentar]=React.useState(false)
-    const[cont,setcont]=React.useState(0)
-    console.log(cont)
+    const[acerto,setacerto]=React.useState(0)
+    const[erro,seterro]=React.useState(0)
+    console.log(acerto)
+    console.log(erro)
     function Habilitarletra(){
             setletra('letra')
             settentar(true)
@@ -56,8 +58,10 @@ export default function Appp(){
         key={a}
         arrpalavra={arrpalavra}
         setselecionados={setselecionados}
-        cont = {cont}
-        setcont= {setcont}
+        acerto = {acerto}
+        setacerto= {setacerto}
+        erro = {erro}
+        seterro = {seterro}
         
         />
            )}
