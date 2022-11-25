@@ -18,14 +18,20 @@ function clicouletra(){
             
                 if(aux[aux.length -1]=== props.arrpalavra[i]){
                     acertos ++
-                    console.log(acertos)
                     props.setacerto(props.acerto + acertos)
+                    if((props.acerto + acertos) == props.arrpalavra.length){
+                        props.setresp('ganhou')
+                        
+                    }
                 }   
             }
         }else{
             erros ++   
-            console.log(erros) 
             props.seterro(props.erro + 1)
+            if((props.erro+1) == 6){
+                props.setresp('Perdeu')
+                
+            }
            
         }
         

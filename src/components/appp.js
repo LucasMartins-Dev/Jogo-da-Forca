@@ -10,6 +10,7 @@ export default function Appp(props){
   const[escolherpalavra,setescolherpalavra] = React.useState(<div onClick = {Iniciarjogo} className="button"> Escolher Palavra</div>)
     const[palavrajogo,setpalavrajogo] = React.useState('')
     const[palavraoculta,setpalavraoculta]=React.useState([])
+    const[chute,setchute]=React.useState('')
     function Iniciarjogo(){
       const palavraescolhida = Math.floor(Math.random()*palavras.length);
       setpalavrajogo (palavras[palavraescolhida])
@@ -31,18 +32,19 @@ export default function Appp(props){
     arrpalavra = palavrajogo.split('')
     console.log(palavrajogo)
     console.log(arrpalavra)
-  
+    const[resp,setresp]=React.useState('oi')
     const[letra,setletra]=React.useState('letra lgray')
-    const[tentar,settentar]=React.useState(false)
     const[acerto,setacerto]=React.useState(0)
     const[erro,seterro]=React.useState(0)
     console.log(acerto)
     console.log(erro)
-   
+    console.log(resp)
+    console.log(chute)
+ 
 
     function Habilitarletra(){
             setletra('letra')
-            settentar(true)
+    
             console.log('oi') 
     }
 
@@ -67,7 +69,6 @@ export default function Appp(props){
         a ={a}
         letra = {letra} 
         setletra={setletra}
-        tentativa = {tentar} 
         key={a}
         arrpalavra={arrpalavra}
         setselecionados={setselecionados}
@@ -75,11 +76,19 @@ export default function Appp(props){
         setacerto= {setacerto}
         erro = {erro}
         seterro = {seterro}
-        
+        resp={resp}
+        setresp = {setresp}
+        setescolherpalavra = {setescolherpalavra}
+        iniciarjogo = {Iniciarjogo}
         />
            )}
            </div>
-      <Chute/>
+      <Chute setchute = {setchute}
+      chute = {chute}
+      palavrajogo ={palavrajogo}
+      setresp = {setresp}
+      
+      />
     </div>
     )
 
