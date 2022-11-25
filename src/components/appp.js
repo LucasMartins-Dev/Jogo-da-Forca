@@ -7,14 +7,14 @@ import palavras from "../palavras.js";
 
 export default function Appp(props){
   let arrpalavra;
-  const[escolherpalavra,setescolherpalavra] = React.useState(<div onClick = {Iniciarjogo} className="button"> Escolher Palavra</div>)
+  const[escolherpalavra,setescolherpalavra] = React.useState(<div data-test="choose-word" onClick = {Iniciarjogo} className="button"> Escolher Palavra</div>)
     const[palavrajogo,setpalavrajogo] = React.useState('')
     const[palavraoculta,setpalavraoculta]=React.useState([])
     const[chute,setchute]=React.useState('')
     function Iniciarjogo(){
       const palavraescolhida = Math.floor(Math.random()*palavras.length);
       setpalavrajogo (palavras[palavraescolhida])
-      setescolherpalavra(<div className="button gray"> Escolher Palavra</div>)
+      setescolherpalavra(<div data-test="choose-word" className="button gray"> Escolher Palavra</div>)
       Habilitarletra()
     
   }

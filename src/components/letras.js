@@ -40,7 +40,7 @@ function clicouletra(){
 
 return(
     
-    <div  onClick={clicouletra} className={`${props.letra} ${ props.selecionados.includes(props.a) ? "lgray" : ""} `}>{props.a}</div>
+    <div data-test="letter" onClick={clicouletra} className={`${props.letra} ${ props.selecionados.includes(props.a) ? "lgray" : ""} `}>{props.a}</div>
      
 )
 

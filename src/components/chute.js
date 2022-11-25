@@ -13,8 +13,8 @@ export default function Chute (props){
     return(
         <div className="chute">
             <h1> Já sei a palavra !</h1>
-            <input onChange={event => props.setchute(event.target.value)}></input>
-            <div onClick={chutarresposta} className="button-chute"> Chutar</div>
+            <input data-test="guess-input" onChange={event => props.setchute(event.target.value)}></input>
+            <div data-test="guess-button" onClick={chutarresposta} className="button-chute"> Chutar</div>
         </div>
     )
 }
