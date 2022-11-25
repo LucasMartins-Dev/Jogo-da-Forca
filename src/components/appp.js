@@ -17,7 +17,14 @@ export default function Appp(props){
       Habilitarletra()
     
   }
-
+  const imagens = ['assets/forca0.png',
+  'assets/forca1.png',
+  'assets/forca2.png',
+  'assets/forca3.png',
+  'assets/forca4.png',
+  'assets/forca5.png',
+  'assets/forca6.png'
+]
     const alfabeto = ["a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z"]
     const[selecionados,setselecionados]=React.useState([])
     console.log(selecionados)
@@ -31,12 +38,15 @@ export default function Appp(props){
     const[erro,seterro]=React.useState(0)
     console.log(acerto)
     console.log(erro)
+   
+
     function Habilitarletra(){
             setletra('letra')
             settentar(true)
             console.log('oi') 
     }
 
+   
     return(
     <div className="App">
       <Jogo funct = {Habilitarletra}
@@ -46,6 +56,9 @@ export default function Appp(props){
       palavrajogo = {palavrajogo}
       setpalavrajogo = {setpalavrajogo}
       palavras={palavras}
+      imagens = {imagens}
+      erro ={erro}
+     
       />
       <div className="letras">
         {alfabeto.map((a)=>

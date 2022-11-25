@@ -20,24 +20,17 @@ function clicouletra(){
                     acertos ++
                     console.log(acertos)
                     props.setacerto(props.acerto + acertos)
-                }
-                    
-                    
-                   
-               
-                
+                }   
             }
-            
         }else{
             erros ++   
-            console.log(erros)
+            console.log(erros) 
             props.seterro(props.erro + 1)
+           
         }
-        
         
     }
   }
-
 
 return(
     
