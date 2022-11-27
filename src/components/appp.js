@@ -7,17 +7,32 @@ import palavras from "../palavras.js";
 
 export default function Appp(props){
   let arrpalavra;
+  const[corfinal,setcorfinal]=React.useState('')
+  const[desabilitar,setdesabilitar]=React.useState(true)
   const[escolherpalavra,setescolherpalavra] = React.useState(<div data-test="choose-word" onClick = {Iniciarjogo} className="button"> Escolher Palavra</div>)
     const[palavrajogo,setpalavrajogo] = React.useState('')
     const[palavraoculta,setpalavraoculta]=React.useState([])
     const[chute,setchute]=React.useState('')
     function Iniciarjogo(){
+      seterro(0)
+      setacerto(0)
+      setresp('oi')
+      setdesabilitar(false)
+      setselecionados([])
+      setcorfinal('')
+      setchute('')
       const palavraescolhida = Math.floor(Math.random()*palavras.length);
       setpalavrajogo (palavras[palavraescolhida])
+      arrpalavra = palavras[palavraescolhida].split('')
+      let tracos = []
+      arrpalavra.forEach((letra)=> tracos.push(" _"))
+      setpalavraoculta(tracos)
+  
       setescolherpalavra(<div data-test="choose-word" className="button gray"> Escolher Palavra</div>)
       Habilitarletra()
     
   }
+  console.log(palavraoculta)
   const imagens = ['assets/forca0.png',
   'assets/forca1.png',
   'assets/forca2.png',
@@ -28,8 +43,8 @@ export default function Appp(props){
 ]
     const alfabeto = ["a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z"]
     const[selecionados,setselecionados]=React.useState([])
-    console.log(selecionados)
     arrpalavra = palavrajogo.split('')
+    console.log(selecionados)
     console.log(palavrajogo)
     console.log(arrpalavra)
     const[resp,setresp]=React.useState('oi')
@@ -40,11 +55,10 @@ export default function Appp(props){
     console.log(erro)
     console.log(resp)
     console.log(chute)
- 
+   
 
     function Habilitarletra(){
             setletra('letra')
-    
             console.log('oi') 
     }
 
@@ -60,7 +74,10 @@ export default function Appp(props){
       palavras={palavras}
       imagens = {imagens}
       erro ={erro}
-     
+     palavraoculta = {palavraoculta}
+     corfinal={corfinal}
+     setcorfinal={setcorfinal}
+     resp={resp}
       />
       <div className="letras">
         {alfabeto.map((a)=>
@@ -80,6 +97,12 @@ export default function Appp(props){
         setresp = {setresp}
         setescolherpalavra = {setescolherpalavra}
         iniciarjogo = {Iniciarjogo}
+        desabilitar={desabilitar}
+        setdesabilitar = {setdesabilitar}
+        setpalavraoculta={setpalavraoculta}
+        palavraoculta={palavraoculta}
+        corfinal={corfinal}
+     setcorfinal={setcorfinal}
         />
            )}
            </div>
@@ -87,7 +110,11 @@ export default function Appp(props){
       chute = {chute}
       palavrajogo ={palavrajogo}
       setresp = {setresp}
-      
+      iniciarjogo = {Iniciarjogo}
+      setcorfinal={setcorfinal}
+      setescolherpalavra = {setescolherpalavra}
+      setdesabilitar = {setdesabilitar}
+      desabilitar={desabilitar}
       />
     </div>
     )
