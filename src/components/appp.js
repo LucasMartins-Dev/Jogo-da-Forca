@@ -32,7 +32,7 @@ export default function Appp(props){
       Habilitarletra()
     
   }
-  console.log(palavraoculta)
+
   const imagens = ['assets/forca0.png',
   'assets/forca1.png',
   'assets/forca2.png',
@@ -44,22 +44,17 @@ export default function Appp(props){
     const alfabeto = ["a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z"]
     const[selecionados,setselecionados]=React.useState([])
     arrpalavra = palavrajogo.split('')
-    console.log(selecionados)
-    console.log(palavrajogo)
-    console.log(arrpalavra)
+ 
     const[resp,setresp]=React.useState('oi')
     const[letra,setletra]=React.useState('letra lgray')
     const[acerto,setacerto]=React.useState(0)
     const[erro,seterro]=React.useState(0)
-    console.log(acerto)
-    console.log(erro)
-    console.log(resp)
-    console.log(chute)
+   
    
 
     function Habilitarletra(){
             setletra('letra')
-            console.log('oi') 
+            
     }
 
    
