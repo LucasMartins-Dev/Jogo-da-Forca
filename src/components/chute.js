@@ -13,6 +13,7 @@ export default function Chute (props){
             props.setdesabilitar(true)
             props.setcorfinal('red')
             props.setescolherpalavra(<div data-test="choose-word" onClick = {props.iniciarjogo} className="button"> Escolher Palavra</div>)
+            props.seterro(6)
         }
     }
 

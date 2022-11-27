@@ -13,7 +13,7 @@ export default function Jogo(props){
         {props.escolherpalavra}
         <div className="palavra-oculta"> 
        <div></div> 
-       <div className={`${'word'} ${props.corfinal}`}>{props.resp=='perdeu' || props.resp=='ganhou'? props.palavrajogo : props.palavraoculta}</div> 
+       <div data-test="word" data-answer={props.palavrajogo} className={`${'word'} ${props.corfinal}`}>{props.resp=='perdeu' || props.resp=='ganhou'? props.palavrajogo : props.palavraoculta}</div> 
         </div>
         
         </div>

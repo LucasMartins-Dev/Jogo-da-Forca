@@ -115,6 +115,7 @@ export default function Appp(props){
       setescolherpalavra = {setescolherpalavra}
       setdesabilitar = {setdesabilitar}
       desabilitar={desabilitar}
+      seterro={seterro}
       />
     </div>
     )
